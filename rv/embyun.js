@@ -7,7 +7,7 @@
 */
 var url = $request.url;
 
-const myStatus = 200;
+const myStatus = "HTTP/1.1 200 OK";
 const myHeaders = {
     "Crack": "KS", 
     "Access-Control-Allow-Origin": "*", 
