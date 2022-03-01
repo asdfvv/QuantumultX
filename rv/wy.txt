@@ -1,0 +1,3 @@
+# JegoTrip Cookie
+https?:\/\/app\.jegotrip\.com\.cn\/.*(call_phone|logonFree) url script-response-body https://ooxx.be/js/jegotrip.js
+hostname= app.jegotrip.com.cn
