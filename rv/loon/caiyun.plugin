@@ -1,5 +1,13 @@
-# 彩云天气，7.20.0版本显示VIP
+[Rule]
+DOMAIN-KEYWORD,gather.colorfulclouds.net,REJECT
 
-^https?:\/\/biz\.cyapi\.cn\/api\/v1\/user_detail$ url script-response-body https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js
+[Script]
+http-response ^https:\/\/biz\.cyapi\.cn\/p\/v1\/trial_card\/info script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=false, timeout=10, tag=限时福利Svip
+http-response ^https:\/\/biz\.cyapi\.cn\/api\/v1\/token\/device$ script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=false, timeout=10, tag=普通版账号迁移
+http-response ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?app_name=weather script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=true, timeout=10, tag=赏叶赏花
+http-response ^https:\/\/biz\.cyapi\.cn\/v2\/user script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=true, timeout=10, tag=解锁旧版VIP
+http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/(satellite|nafp\/origin_images) script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=true, timeout=10, tag=卫星云图
+http-response ^https?:\/\/biz\.cyapi\.cn\/api\/v1\/user_detail$ script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/caiyun.js, requires-body=true, timeout=10, tag=显示VIP
 
-hostname = *.cyapi.cn
+[MITM]
+hostname = biz.cyapi.cn, wrapper.cyapi.cn
