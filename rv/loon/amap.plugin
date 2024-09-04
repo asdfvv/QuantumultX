@@ -5,4 +5,4 @@ http-response ^https?:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\
 hostname = *.amap.com
 
 [Script]
-cron "1 0 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, tag=高德地图打车签到
+cron "50 16 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, tag=高德地图打车签到
